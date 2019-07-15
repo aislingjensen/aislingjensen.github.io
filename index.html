@@ -33,8 +33,7 @@
            for (var key in classes){
              if (classes[key].Level >= 80) return document.getElementById(id).innerHTML="YES";
            }
-           document.getElementById(id).innerHTML="NO";
-           console.log(classes)
+           return document.getElementById(id).innerHTML="NO";
            })
         }
       window.onload=function() {
