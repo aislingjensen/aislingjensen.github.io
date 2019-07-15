@@ -21,7 +21,9 @@
           })
           .then(data => {
           // Work with JSON data here
-           console.log(data)
+           let classes = data.Character.ClassJobs;
+            
+           console.log(classes)
            })
 
         document.getElementById(id).innerHTML="NO";
