@@ -13,8 +13,16 @@
       } 
       body {text-align: center;}
     </style>
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">  
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest"> 
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
     <script type="text/javascript">
-      function checkLodestoneAndGetAnswer() {
+      function checkLodestoneAndGetAnswer(id) {
         fetch('https://xivapi.com/character/11998578')
           .then(response => {
           return response.json()
@@ -23,14 +31,14 @@
           // Work with JSON data here
            let classes = data.Character.ClassJobs;
            for (var key in classes){
-             if (classes[key].Level >= 80) return "YES";
+             if (classes[key].Level >= 80) return document.getElementById(id).innerHTML="YES";
            }
-           return "NO";
+           document.getElementById(id).innerHTML="NO";
            console.log(classes)
            })
         }
       window.onload=function() {
-       document.getElementById("answer").innerHTML=checkLodestoneAndGetAnswer();
+       checkLodestoneAndGetAnswer("answer")
       }
     </script>
   </head>
