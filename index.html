@@ -22,8 +22,8 @@
           .then(data => {
           // Work with JSON data here
            let classes = data.Character.ClassJobs;
-           for (var class in classes){
-             if (class.Level >= 80) return "YES";
+           for (var key in classes){
+             if (classes[key].Level >= 80) return "YES";
            }
            return "NO";
            console.log(classes)
