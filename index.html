@@ -22,14 +22,15 @@
           .then(data => {
           // Work with JSON data here
            let classes = data.Character.ClassJobs;
-            
+           for (var class in classes){
+             if (class.Level >= 80) return "YES";
+           }
+           return "NO";
            console.log(classes)
            })
-
-        document.getElementById(id).innerHTML="NO";
-      }
+        }
       window.onload=function() {
-        checkLodestoneAndSet("answer");
+       document.getElementById(id).innerHTML=checkLodestoneandGet("answer");
       }
     </script>
   </head>
