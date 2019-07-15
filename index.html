@@ -15,7 +15,16 @@
     </style>
     <script type="text/javascript">
       function checkLodestoneAndSet(id) {
-        document.getElementById(id).innerHTML("NO");
+        fetch('./data.json')
+          .then(response => {
+          return response.json()
+          })
+          .then(data => {
+          // Work with JSON data here
+           console.log(data)
+           })
+
+        document.getElementById(id).innerHTML="NO";
       }
       window.onload=function() {
         checkLodestoneAndSet("answer");
