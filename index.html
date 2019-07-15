@@ -14,7 +14,7 @@
       body {text-align: center;}
     </style>
     <script type="text/javascript">
-      function checkLodestoneAndSet(id) {
+      function checkLodestoneAndGetAnswer() {
         fetch('https://xivapi.com/character/11998578')
           .then(response => {
           return response.json()
@@ -30,7 +30,7 @@
            })
         }
       window.onload=function() {
-       document.getElementById(id).innerHTML=checkLodestoneandGet("answer");
+       document.getElementById("answer").innerHTML=checkLodestoneandGetAnswer();
       }
     </script>
   </head>
