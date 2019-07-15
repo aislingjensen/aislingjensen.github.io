@@ -12,11 +12,19 @@
         cursor: default;
       } 
       body {text-align: center;}
-    </style>  
+    </style>
+    <script type="text/javascript">
+      checkLodestoneAndSet(id){
+        document.getElementById(id).innerHTML("NO");
+      }
+      window.onload=function() {
+        checkLodestoneAndSet("answer");
+      }
+    </script>
   </head>
   <body>
      <a id="answer">
-       NO
+       FOO
      </a>
   </body>
 </html>    
